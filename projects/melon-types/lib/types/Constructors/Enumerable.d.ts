@@ -1,4 +1,4 @@
-declare interface Enumerable<T> {
+declare interface Enumerable<T> extends Iterable<T> {
     elements: () => T[],
     where: (filter: (this: T) => boolean) => Enumerable<T> ,
     top: (quantity: number) => Enumerable<T> ,
@@ -16,4 +16,4 @@ declare interface Enumerable<T> {
     equals: (target: any) => boolean
 }
 
-declare function Enumerable<T>(args: T[]): void
+declare function Enumerable<T>(args: Iterable<T>): void
